@@ -26,6 +26,6 @@ namespace :load do
   task :defaults do
     set :maintenance_basename, "maintenance"
     set :maintenance_language, "en"
-    set :maintenance_template_path, -> { File.expand_path("../maintenance.#{fetch(:maintenance_language}.html.erb", __FILE__) }
+    set :maintenance_template_path, -> { File.expand_path("../maintenance.#{fetch(:maintenance_language)}.html.erb", __FILE__) }
   end
 end
