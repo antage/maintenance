@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Техобслуживаине</title>
+    <style type="text/css">
+    body {
+        width: 400px;
+        margin: 100px auto;
+        font: 300 120% "OpenSans", "Helvetica Neue", "Helvetica", Arial, Verdana, sans-serif;
+    }
+
+    h1 {
+        font-weight: 300;
+    }
+    </style>
+</head>
+<body>
+    <h1>Техобслуживание</h1>
+
+    <p>Сайт закрыт для <%= reason ? reason : "техобслуживания" %>.</p>
+
+    <p>Будет доступен <%= deadline ? deadline : "скоро" %>.</p>
+</body>
+</html>
