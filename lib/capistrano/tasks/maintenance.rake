@@ -7,10 +7,10 @@ namespace :maintenance do
       reason = ENV['REASON']
       deadline = ENV['UNTIL']
 
-      template = File.read(fetch(:maintenance_template_path))
-      result = ERB.new(template).result(binding)
+      template = ERB.new(File.read(fetch(:maintenance_template_path)))
+      stream = StringIO.new(template.result(binding))
 
-      put result, "#{shared_path}/public/system/#{fetch(:maintenance_basename)}.html", :mode => 0644
+      upload! stream, "#{shared_path}/public/system/#{fetch(:maintenance_basename)}.html"
     end
   end
 
