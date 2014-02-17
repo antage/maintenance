@@ -17,7 +17,7 @@ namespace :maintenance do
   desc "Turn off maintenance mode"
   task :disable do
     on roles(:web) do
-      run "rm -f #{shared_path}/public/system/#{fetch(:maintenance_basename)}.html"
+      exec :rm, "-f", "#{shared_path}/public/system/#{fetch(:maintenance_basename)}.html"
     end
   end
 end
